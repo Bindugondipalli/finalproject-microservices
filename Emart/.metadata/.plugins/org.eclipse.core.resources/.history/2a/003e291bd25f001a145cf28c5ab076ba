@@ -1,0 +1,29 @@
+package com.cts.resources;
+
+
+import java.util.List;
+
+
+
+import com.cts.beans.Login;
+import com.cts.service.LoginService;
+
+
+
+@RestController
+@RequestMapping("/info")
+public class LoginController {
+	
+	@Autowired
+	LoginService service;
+	
+	@RequestMapping("/login")
+	Login getLogin() {
+		return service.getLogin();
+	}
+	@RequestMapping("/all")
+	List<Object> getAllLogins(){
+		 return service.getAllLogins();
+	}
+
+}
